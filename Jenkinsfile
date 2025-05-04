@@ -7,19 +7,26 @@ pipeline {
                 git 'https://github.com/akhilp90/AkakikeAssignment.git'
             }
         }
+
         stage('Build') {
             steps {
-                sh 'javac Main.java' // Compile your Java files
+                // Replace Unix 'sh' with Windows 'bat'
+                bat 'echo Building project...'
+                // Add actual build commands here (e.g., mvn clean install or whatever you use)
             }
         }
+
         stage('Test') {
             steps {
-                sh 'java Main' // Or run JUnit, etc.
+                bat 'echo Running tests...'
+                // Add actual test commands here
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deployment step (can be SSH, Docker, etc)'
+                bat 'echo Deploying...'
+                // Add deployment steps
             }
         }
     }
